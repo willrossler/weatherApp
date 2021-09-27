@@ -1,24 +1,13 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({ element }) => {
     return (
-        <div className='bg-blue-lighter p-6 rounded-lg'>
-            <div className='flex-col'>
-                <p>
-                    2020-14-10
-                </p>
-                <div className='flex justify-center items-center'>
-                {/*image 50x50px */}
-
-                </div>
-                
-            </div>
-            <div classname='flex justify-between'>
-                <span>22 C</span><br />
-                <span>26 C</span>
-            </div>
+        <div className='bg-blue-lighter p-6 rounded-lg flex flex-col justify-center items-center'>
+            <span>{element.dt_txt.substring(0, 10)}</span>
+          {/*   <span>{element.dt_txt.substring(11)}</span> */}
+            <span>{element.main.temp} Degrees</span>
         </div>
-    )
+    );
 }
 
 export default Card
